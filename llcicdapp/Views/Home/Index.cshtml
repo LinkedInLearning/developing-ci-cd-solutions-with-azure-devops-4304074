@@ -1,0 +1,38 @@
+﻿@model IList<llcicdapp.Models.AssessmentViewModel>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to the portal</h1>
+    <p>The table represents assessment summary for the recently concluded examination.</p>
+</div>
+
+<div class="row">
+    <h2>Assessment Report</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Student Id</th>
+                <th>Name</th>
+                <th>Level</th>
+                <th>Course</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.StudentId)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Level)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Course)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Score)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
